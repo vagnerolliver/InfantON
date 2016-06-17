@@ -1,0 +1,1 @@
+module.exports = 'O campo {VALUE} deve ser preenchido';

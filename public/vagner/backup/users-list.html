@@ -1,0 +1,99 @@
+<h2>Listagem dos usuários</h2>
+
+<p class="col s12">
+  <label>
+    <input type="email" data-ng-model="User.form.email" placeholder="Email">
+  </label>
+  <br>
+  <label>
+    <input type="text" data-ng-model="User.form.password" placeholder="Senha">
+  </label>
+</p>
+<button data-ng-click="User.add(User.form)" class="btn btn-large green waves-effect waves-light col s6" type="submit" name="action">Add</button>
+<button data-ng-click="User.save(User.form)" class="btn btn-large blue waves-effect waves-light col s6" type="submit" name="action">Save</button>
+<span data-ng-init="predicate = 'name'; reverse = true; "></span>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4">
+        <label>
+          <input data-ng-model="searchUser" data-ng-model-options="User.modelOptions" placeholder="Filtrar usuário">
+        </label>
+      </th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Email</th>
+      <th>Senha</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-class="{bold: !user.selecionado, strike: user.selecionado}" class="item" data-ng-repeat="user in User.users | filter:searchUser | orderBy:User.predicate:User.reverse ">
+      <td>
+        <input type="checkbox" id="user-{{$index}}" ng-model="user.selecionado" />
+        <label for="user-{{$index}}"></label>
+      </td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.password }}</td>
+      <td>
+        <button data-ng-click="User.edit(user, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+ 
+
+<!-- <div class="container">
+  <div>
+      <div ng-controller="CalculatorController">
+        Enter a number:
+        <input type="number" ng-model="number">
+        <button  ng-click="findSquare()">Square</button>
+        <div>{{answer}}</div>
+      </div>
+  </div>
+  <hr/>
+  <div ng-controller="StringController">
+      Enter Name:
+      <input ng-model="name">
+      <button  ng-click="findReverse()">Reverse Name</button>
+      <div>{{reversename}}</div>
+  </div>
+</div>
+<hr> -->
+
+<!-- <h1>Sample Students Server</h1>
+<div ng-controller="StudentController">
+    <form class="well">               
+        <input type="text" name="fname" ng-model="fname" placeholder="first name" /> <br/>       
+        <input type="text" name="lname" ng-model="lname" placeholder="last name" />             
+        <br /><br/>               
+        <input type="button" value="add student" ng-click="addStudent()" />
+    </form>
+    <br/>
+    <table class="table">
+        <tr ng-repeat="s in students">
+            <td>{{ s.FirstName }}</td>
+            <td>{{ s.LastName }}</td>
+        </tr>
+    </table>
+</div>
+  -->
+
+<button data-ng-click="User.orderByName()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Order Name</button>
+<button data-ng-click="User.orderByEmail()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Order Email</button>
+<button data-ng-click="User.remove(User.users)" class="btn btn-large red waves-effect waves-light col s12" type="submit" name="action">Remove
+</button>
+
+<!-- <div ng-app="app">
+    <div ng-controller="CalculatorController">
+        Enter a number:
+        <input type="number" ng-model="number" />
+        <button ng-click="doSquare()">X<sup>2</sup></button>
+        <button ng-click="doCube()">X<sup>3</sup></button>
+        
+        <div>Answer: {{answer}}</div>
+    </div>
+</div> -->

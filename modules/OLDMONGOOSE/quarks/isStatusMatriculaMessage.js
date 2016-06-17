@@ -1,0 +1,1 @@
+module.exports = 'O status da matricula {VALUE} precisa ser preechido.';

@@ -1,0 +1,1 @@
+module.exports = 'O Ano letivo {VALUE} precisa ser preenchido e ser maior que a data atual';

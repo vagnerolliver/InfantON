@@ -1,0 +1,1 @@
+module.exports = 'O turno {VALUE} precisa ser preenchido';

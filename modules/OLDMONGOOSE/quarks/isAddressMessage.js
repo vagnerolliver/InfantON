@@ -1,0 +1,1 @@
+module.exports = 'O endereço {VALUE} precisa ser preechido.';

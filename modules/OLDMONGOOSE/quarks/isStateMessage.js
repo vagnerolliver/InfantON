@@ -1,0 +1,1 @@
+module.exports = 'O estado {VALUE} precisa ser preechido.';

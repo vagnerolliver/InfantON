@@ -1,0 +1,1 @@
+module.exports = 'A data de cadastro {VALUE} precisa ser depois de hoje!';

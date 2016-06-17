@@ -1,0 +1,68 @@
+<!-- código da aula 12 -->
+<h2>Cadastro de Curso</h2>
+<form name="Curso.cursoForm" data-ng-submit="Curso.submitForm(Curso.form)">
+  <label>
+    <input type="text" data-ng-model="Curso.form.name" placeholder="Nome">
+  </label>
+  <br>
+  <label>
+    <input type="date" data-ng-model="Curso.form.dateBegin" placeholder="Data Inicio">
+  </label>
+  <br>
+  <label>
+    <input type="text" data-ng-model="Curso.form.link" placeholder="Link">
+  </label>
+ 
+  <button data-ng-click="Curso.add(Curso.form)" class="btn btn-large green waves-effect waves-light col s12" type="submit" name="action">
+    Cadastrar
+  </button> 
+</form>
+  
+
+ <table>
+
+  <thead>
+    <tr>
+      <th colspan="4">
+        <label>
+          <input data-ng-model="searchCurso" data-ng-model-options="Curso.modelOptions" placeholder="Filtrar usuário">
+        </label>
+      </th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Data Inícios</th>
+      <th>link</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr data-ng-class="{bold: !curso.selecionado, strike: curso.selecionado}" class="item" data-ng-repeat="curso in Curso.cursos | filter:searchCurso | orderBy:Curso.predicate:Curso.reverse ">
+ 
+      <td>{{ curso.name }}</td>
+      <td>{{ curso.dateBegin  | date: 'medium' }}</td>
+      <td>{{ curso.link }}</td>
+
+      <td>
+        <div class="col s6">  
+          <button data-ng-click="Curso.edit(aluno, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">
+            Edit
+          </button>
+        </div>
+        <div class="col s6">  
+          <button data-ng-click="Curso.remove(curso)" class="btn red waves-effect waves-light col s12" type="submit" name="action">
+            Remover
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+ 
+<button data-ng-click="Curso.orderByName()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Order Name</button>
+<button data-ng-click="Curso.orderByData()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Order Data</button>
+ 
+ 

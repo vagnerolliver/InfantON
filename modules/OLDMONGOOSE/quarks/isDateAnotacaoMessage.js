@@ -1,0 +1,1 @@
+module.exports = 'A data da anotacao {VALUE} precisa ser preenchida';

@@ -1,0 +1,1 @@
+Depois de definirmos todos nossos átomos devemos criar ou usar todos os Hádrons necessários chamados no validate.

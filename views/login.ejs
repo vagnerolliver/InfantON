@@ -1,0 +1,51 @@
+ 
+
+<!doctype html>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+ 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/stylesheets/style.css">
+	</head>
+	<body>
+		<div id='main'>
+
+			<nav class="navbar-fluid navbar-default navbar-fixed-top">
+				<div class="container">
+						<a class="navbar-brand" href="#"> Chirp! </a>
+						<p class="navbar-text"> Learn the MEAN stack by building this tiny app</p>
+						<p class="navbar-right navbar-text" ng-hide="authenticated">
+								<% if ( isAuthenticated) { %>
+					 				<a href='/login'>Login in here </a>	or <a href='#/signup'>Register</a>				 		
+							 <% } %>	
+						</p>
+						<p class="navbar-right navbar-text" ng-show="authenticated"><a href="/logout" ng-click="signout()">Logout</a></p>
+						<p class="navbar-right navbar-text">
+							<% if (isAuthenticated) { %>
+							 Signed in as <%= user.name %>!
+							 <% } %>	
+						</p>
+				</div>
+			</nav>
+			<div ng-view>
+				<form action="" class="form-auth" ng-submit="login()" method="post">
+					<h2>Log In</h2>
+					<p class="text-warning">{{ error_message }}</p>
+					<input type="username" name="username" ng-model="user.username" placeholder="Username" class="form-control"><br>
+					<input type="password" name="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
+					<input type="submit" value="Log in" class="btn btn-primary" />
+				</form>
+			</div> 
+		</div>
+ 
+
+	</body>
+</html>
+
+

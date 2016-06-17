@@ -1,0 +1,1 @@
+module.exports = 'O salário {VALUE} deve ser informado';

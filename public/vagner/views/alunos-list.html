@@ -1,0 +1,82 @@
+<h2>Listagem dos alunos</h2>
+
+<p class="col s12">
+  <label>
+    <input type="text" data-ng-model="Aluno.form.name" placeholder="Nome">
+  </label>
+  <br>
+  <label>
+    <input type="text" data-ng-model="Aluno.form.dateBirth" placeholder="Data Nascimento">
+  </label>
+  <label>
+    <input type="email" data-ng-model="Aluno.form.email" placeholder="Email">
+  </label>
+  <label>
+    <input type="text" data-ng-model="Aluno.form.password" placeholder="Senha">
+  </label>
+</p>
+
+<table data-ng-controller="CursoController as Curso">
+  <caption>Cursos Disponíveis</caption>
+  <tbody>
+    <tr data-ng-class="{bold: !curso.selecionado, strike: curso.selecionado}" class="item" data-ng-repeat="curso in Curso.cursos">
+      <td>
+        <input type="checkbox" id="curso-{{$index}}" ng-model="curso.selecionado" />
+        <label for="curso-{{$index}}"></label>
+      </td>
+  
+      <td>{{ curso.name }}</td>
+      <td>{{ curso.dateBegin | date: 'medium' }}</td>
+      <td>{{ curso.link }}</td>
+
+      <!--
+      <td>
+        <button data-ng-click="Curso.edit(curso, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">Edit</button>
+      </td> 
+      -->
+    </tr>
+  </tbody>
+</table>
+
+<button data-ng-click="Aluno.add(Aluno.form)" class="btn btn-large green waves-effect waves-light col s6" type="submit" name="action">Add</button>
+<button data-ng-click="Aluno.save(Aluno.form)" class="btn btn-large blue waves-effect waves-light col s6" type="submit" name="action">Save</button>
+<span data-ng-init="predicate = 'name'; reverse = true; "></span>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4">
+        <label>
+          <input data-ng-model="searchAluno" data-ng-model-options="Aluno.modelOptions" placeholder="Filtrar usuário">
+        </label>
+      </th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <!-- <th>Data Início</th> -->
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-class="{bold: !Aluno.selecionado, strike: Aluno.selecionado}" class="item" data-ng-repeat="aluno in Aluno.alunos | filter:searchAluno | orderBy:Aluno.predicate:Aluno.reverse ">
+      <td>
+        <input type="checkbox" id="aluno-{{$index}}" ng-model="aluno.selecionado" />
+        <label for="aluno-{{$index}}"></label>
+      </td>
+   
+      <td><a href="/alunos/0/id/{{ aluno._id }}">{{ aluno.name }}</a></td>
+      <!-- <td>{{ aluno.dateBirth }}</td> -->
+      <td>
+        <button data-ng-click="Aluno.edit(aluno, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+ 
+<button data-ng-click="Aluno.orderByName()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Order Name</button>
+<button data-ng-click="Aluno.orderByEmail()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Order Email</button>
+<button data-ng-click="Aluno.remove(Aluno.alunos)" class="btn btn-large red waves-effect waves-light col s12" type="submit" name="action">Remove
+</button>
+
+ 

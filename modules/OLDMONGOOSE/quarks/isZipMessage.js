@@ -1,0 +1,1 @@
+module.exports = 'O o cep {VALUE} precisa ser preechido corretamente.';

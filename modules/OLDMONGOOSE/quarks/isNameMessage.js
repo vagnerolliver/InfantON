@@ -1,0 +1,1 @@
+module.exports = 'O nome {VALUE} precisa ter tamanho maior que 6 e menor que 80!';

@@ -1,0 +1,36 @@
+<!-- código da aula 12 -->
+<h2>Cadastro de usuário</h2>
+<form name="User.userForm" data-ng-submit="User.submitForm(User.form)">
+  <div data-ng-class="{'invalid' : User.form.email.$invalid && !User.form.password.$pristine && !User.form.name.$pristine && !User.form.dateBirth.$pristine}" >
+    <input type="text" name="name" data-ng-model="User.form.name" placeholder="Nome" required>
+  </div>
+    <div data-ng-class="{'invalid' : User.form.email.$invalid && !User.form.password.$pristine && !User.form.name.$pristine && !User.form.dateBirth.$pristine}">
+    <input type="date" name="dateBirth" data-ng-model="User.form.dateBirth" placeholder="Data Aniversário" required>
+  </div>
+  <div data-ng-class="{'invalid' : User.form.email.$invalid && !User.form.password.$pristine && !User.form.name.$pristine  && !User.form.dateBirth.$pristine}">
+    <input type="email" name="email" data-ng-model="User.form.email" placeholder="Email" required>
+  </div>
+  <div data-ng-class="{'invalid': User.form.password.$invalid && !User.form.password.$pristine && !User.form.name.$pristine && !User.form.dateBirth.$pristine, 'dirty': User.form.password.$dirty}">
+    <input type="password" name="password" data-ng-model="User.form.password" placeholder="password" required>
+  </div>
+ 
+  <table>
+     <tbody>
+       <!-- data-ng-class="{bold: !User.form.selecionado, strike: User.form.selecionado}" -->
+      <tr class="item" data-ng-repeat="curso in User.cursos">
+        <td>
+          <input type="checkbox" id="curso-{{$index}}" value="{{ curso._id }}" data-ng-model="User.form.cursos[curso._id]" ng-checked="curso.checked" />
+          <label for="curso-{{$index}}"></label>
+        </td>
+        <td>{{ curso.name }}</td>
+        <td>{{ curso.dateBegin  | date: 'medium' }}</td>
+        <td>{{ curso.link }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+  <button data-ng-disabled="User.editing || User.form.name.$pristine" class="btn btn-large green waves-effect waves-light col s12" type="submit" name="action">Cadastrar</button>
+  <!-- <button data-ng-disabled="!User.editing" data-ng-click="User.save(User.form)" class="btn btn-large animate blue waves-effect waves-light col s12" type="submit" name="action">Save</button> -->
+</form>
+ 
+ 

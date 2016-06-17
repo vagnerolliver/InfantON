@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>InfantON</title>
+</head>
+<body>
+ <% if (!isAuthenticated) { %>
+ 		<a href='/login'>Login in here </a>	
+ <% } else { %>
+ 			Hello, <%= user.name %>! 
+ 			<a href="/logout">LOG OUT HERE </a>	
+ <% } %> 
+</body>
+</html>

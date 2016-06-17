@@ -1,0 +1,1 @@
+module.exports = 'A cidade {VALUE} precisa ser preechido.';

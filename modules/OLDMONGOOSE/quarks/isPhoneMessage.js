@@ -1,0 +1,1 @@
+module.exports = 'O Telefone {VALUE} precisa ser cadastrado.';

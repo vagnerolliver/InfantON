@@ -1,0 +1,52 @@
+<h2>Dados do usuário</h2>
+<p> Buscar o user pelo id: {{ UserDetails.routeParams._id }}</p>
+<p class="card-panel">
+  Nome: {{ UserDetails.routeParams.name }}
+  <br>
+  Email: {{ UserDetails.routeParams.user.email }}
+  <br>
+  Data Nascimento: {{ UserDetails.routeParams.dateBirth | date: 'medium' }}
+  <br>
+
+</p>
+ <table>
+
+  <thead>
+    <tr>
+      <th colspan="4">
+        <label>
+          <input data-ng-model="searchCurso" data-ng-model-options="UserDetails.modelOptions" placeholder="Filtrar usuário">
+        </label>
+      </th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Data Inícios</th>
+      <th>link</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="item"  ng-if="curso != null" data-ng-repeat="curso in UserDetails.routeParams.cursos | filter:searchCurso | orderBy:UserDetails.predicate:UserDetails.reverse ">
+      <td>{{ curso.name }}</td>
+      <td>{{ curso.dateBegin  | date: 'medium' }}</td>
+      <td>{{ curso.link }}</td>
+
+      <td>
+        <div class="col s6">  
+          <button class="btn blue waves-effect waves-light col s12" type="submit" name="action">
+            Edit
+          </button>
+        </div>
+        <div class="col s6">  
+          <button class="btn red waves-effect waves-light col s12" type="submit" name="action">
+            Remover
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

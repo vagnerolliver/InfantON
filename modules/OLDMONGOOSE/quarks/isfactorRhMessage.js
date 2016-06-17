@@ -1,0 +1,1 @@
+module.exports = 'O Fator Rh {VALUE} precisa ser depois de hoje!';

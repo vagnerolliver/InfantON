@@ -1,0 +1,1 @@
+module.exports = 'O sexo {VALUE} precisa ser prenchido!';

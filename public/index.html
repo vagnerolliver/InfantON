@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-ng-app="BeMEAN">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Be MEAN - EAD</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1"></script>
+  <link rel="stylesheet" href="/assets/css/materialize.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <section class="row wrapper">
+    <img class="atom-logo" src="/assets/images/bemean-logo.png" alt="Logo do Be MEAN">
+    <h1>Be MEAN - EAD</h1>
+    <ul class="menu">
+      <li><a href="#/users">Listar Usuários</a></li>
+      <li><a href="#/users/create">Cadastrar Usuário</a></li>
+      <li><a href="#/cursos/create">Curso</a></li>
+    </ul>
+    <div data-ng-view></div>
+  </section>
+
+  <script src="/assets/libs/angular.min.js"></script>
+  <script src="/assets/libs/angular-route.js"></script>
+  <script src="/assets/libs/angular-animate.js"></script>
+  
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/user.js"></script>
+  <script src="/assets/js/curso.js"></script>
+</body>
+</html>

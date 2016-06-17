@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-ng-app="BeMEAN">
+ 
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Be MEAN - EAD</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+ <body>
+
+  <section class="row wrapper">
+    <img class="atom-logo" src="/images/bemean-logo.png" alt="Logo do Be MEAN">
+    <h1>Be MEAN - EAD</h1>
+    <div data-ng-view></div>
+  </section>
+
+
+  <div ng-controller="UserController">
+  </div>
+
+
+  <script src="/javascripts/vendors/jquery-2.2.0.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.4/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.4/angular-route.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.4/angular-animate.min.js"></script>
+  <script src="/javascripts/app.js"></script>
+  <script src="/javascripts/controllers/user.js"></script>
+
+  <!-- <script src="/javascripts/myApp.js"></script>   -->
+  <!-- <script src="/javascripts/service/StudentController.js"></script> -->
+  <!-- <script src="/javascripts/service/CalculatorService.js"></script>
+  <script src="/javascripts/controllers/CalculatorController.js"></script>
+  <script src="/javascripts/controllers/myApp.js"></script> -->
+  
+</body>
+</html>
